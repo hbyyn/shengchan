@@ -1,0 +1,17 @@
+<!-- index.wxml -->
+<view class="page">
+  <view class="tab_footer">
+    <view class="footer_item" wx:for="{{navList}}" wx:key="index" data-index="{{index}}" bindtap="tabClick">
+      {{item.urlname}}
+      <view class="footer_ul" wx:if="{{num === index && ishow}}">
+        <view class="footer_li" wx:for="{{item.navChildList}}" wx:key="index">
+          <block>
+            <navigator url="..{{item.url}}">
+              <view>{{item.urlname}}</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

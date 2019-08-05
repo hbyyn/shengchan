@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/materials/materials",
+    "pages/materials/supplier",
+    "pages/materials/format",
+    "pages/materials/product",
+    "pages/repair/mrepair",
+    "pages/repair/repair",
+    "pages/order/orderproduct",
+    "pages/order/order",
+    "pages/order/customers",
+    "pages/worker/mwork",
+    "pages/worker/work"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

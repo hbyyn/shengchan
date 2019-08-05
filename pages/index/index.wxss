@@ -1,0 +1,83 @@
+/**index.wxss**/
+.tab_footer {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.tab_footer::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background-color: blue;
+  -webkit-transform: scale(1, 0.5);
+  transform: scale(1, 0.5);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.tab_footer .footer_item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.tab_footer .footer_item .footer_ul {
+  width: 100px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 6px;
+  font-size: 11px;
+  box-shadow: 0 0 4px blue;
+}
+.tab_footer .footer_item .footer_ul .footer_li {
+  position: relative;
+  padding-left: 4px;
+}
+.tab_footer .footer_item .footer_ul .footer_li::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background-color: black;
+  -webkit-transform: scale(1, 0.5);
+  transform: scale(1, 0.5);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+.tab_footer .footer_item .footer_ul .footer_li:nth-child(1)::after {
+  display: none;
+}
+
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */

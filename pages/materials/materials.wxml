@@ -1,0 +1,129 @@
+<view class="weui-cells__title">表单</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label" value="{{formData.material_id}}">物料编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">物料名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">物料类型</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">规格编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">物料单位</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">供应商编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">ERP编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">EPR入库日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">EPR入库编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">领料人</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">领料时间</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">父级编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">产品编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" />
+    </view>
+  </view>
+  </view>
+
+  <!-- <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="weui-input">{{date}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">时间</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view class="weui-input">{{time}}</view>
+      </picker>
+    </view>
+  </view>
+</view> -->
