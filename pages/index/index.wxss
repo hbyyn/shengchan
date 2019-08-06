@@ -17,7 +17,7 @@
   top: 0;
   left: 0;
   height: 1px;
-  background-color: blue;
+  background-color: #1183fb;
   -webkit-transform: scale(1, 0.5);
   transform: scale(1, 0.5);
   -webkit-transform-origin: center bottom;
@@ -37,7 +37,7 @@
   bottom: 40px;
   left: 6px;
   font-size: 11px;
-  box-shadow: 0 0 4px blue;
+  box-shadow: 0 0 4px #1183fb;
 }
 .tab_footer .footer_item .footer_ul .footer_li {
   position: relative;

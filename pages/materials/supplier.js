@@ -5,7 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    formData: {
+      client_id: "",
+      supplier_id:"333+",
+      //供应商
+      supplier_name: "DDD+",
+      supplier_tel: "333+",
+      supplier_address: "333+",
+      supplier_fax: "333+",
+      client_creator: "",
+      client_createtime: "",
+      client_updator: "",
+      client_updatetime: ""
+    }
   },
 
   /**

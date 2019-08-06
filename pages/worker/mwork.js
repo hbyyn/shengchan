@@ -5,6 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    formData: {
+      client_id: '',
+      material_id: 'b546+',
+      work_id: 'c222+',
+      material_work_begindate: '',
+      material_work_enddate: '',
+      client_creator: '',
+      client_createtime: '',
+      client_updator: '',
+      client_updatetime: ''
+    }
 
   },
 

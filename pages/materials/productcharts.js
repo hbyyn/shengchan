@@ -1,4 +1,4 @@
-// pages/worker/work.js
+// pages/materials/productcharts.js
 Page({
 
   /**
@@ -6,16 +6,19 @@ Page({
    */
   data: {
     formData: {
-      client_id: '',
-      work_id: '',
-      work_name: '',
-      parent_id:'',
-      work_desc: '',
-      client_creator: '',
-      client_createtime: '',
-      client_updator: '',
-      client_updatetime: ''
+      client_id: "",
+      //产品表
+      product_id: "",
+      product_name: "",
+      product_color:"",
+      product_desc: "",
+
+      client_creator: "",
+      client_createtime: "",
+      client_updator: "",
+      client_updatetime: ""
     }
+
   },
 
   /**

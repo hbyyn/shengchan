@@ -5,6 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    formData: {
+      client_id: "",
+      format_id: "",
+      format_name: "",
+      client_creator: "",
+      client_createtime: "",
+      client_updator: "",
+      client_updatetime: ""
+    }
 
   },
 

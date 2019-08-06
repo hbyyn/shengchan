@@ -5,7 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    formData: {
+      client_id: "",
+      repair_id: "",
+      repair_name: "",
+      parent_id:'',
+      repair_desc: "",
+      form_content: "",
+      form_fileList: [],
+      client_creator: "",
+      client_createtime: "",
+      client_updator: "",
+      client_updatetime: ""
+    }
   },
 
   /**

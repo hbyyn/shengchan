@@ -1,21 +1,11 @@
-// pages/worker/work.js
+// pages/worker/workcharts.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    formData: {
-      client_id: '',
-      work_id: '',
-      work_name: '',
-      parent_id:'',
-      work_desc: '',
-      client_creator: '',
-      client_createtime: '',
-      client_updator: '',
-      client_updatetime: ''
-    }
+
   },
 
   /**

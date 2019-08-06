@@ -1,2 +1,38 @@
-<!--pages/repair/mrepair.wxml-->
-<text>pages/repair/mrepair.wxml</text>
+<view class="weui-cells__title">新增</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">物料编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_id}}" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">返修编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" value="{{formData.repair_id}}" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">维修启动日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_repair_begindate}}" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">维修结束日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_repair_enddate}}" />
+    </view>
+  </view>
+</view>
+
+
+

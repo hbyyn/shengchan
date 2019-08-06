@@ -1,11 +1,11 @@
-<view class="weui-cells__title">表单</view>
+<view class="weui-cells__title">新增</view>
 <view class="weui-cells weui-cells_after-title">
   <view class="weui-cell ">
     <view class="weui-cell__hd">
-      <view class="weui-label" value="{{formData.material_id}}">物料编号</view>
+      <view class="weui-label">物料编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_id}}" />
     </view>
   </view>
   <view class="weui-cell ">
@@ -13,7 +13,7 @@
       <view class="weui-label">物料名称</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_name}}" />
     </view>
   </view>
   <view class="weui-cell ">
@@ -21,15 +21,18 @@
       <view class="weui-label">物料类型</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_type}}" />
     </view>
   </view>
-  <view class="weui-cell ">
+  <!-- <input class="weui-input" placeholder="请输入"value="{{formData.format_id}}" /> -->
+  <view class="weui-cell">
     <view class="weui-cell__hd">
       <view class="weui-label">规格编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <picker bindchange="bindFormatIdChange" value="{{formatIdIndex}}" range="{{add_format_id}}">
+        <view class="picker">请选择:{{add_format_id[formatIdIndex]}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -37,7 +40,7 @@
       <view class="weui-label">物料单位</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_unit}}" />
     </view>
   </view>
   <view class="weui-cell ">
@@ -45,7 +48,10 @@
       <view class="weui-label">供应商编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.supplier_id}}" /> -->
+      <picker bindchange="bindSupplierIdChange" value="{{supplierIdIndex}}" range="{{add_supplier_id}}">
+        <view class="picker">请选择:{{add_supplier_id[supplierIdIndex]}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -53,7 +59,7 @@
       <view class="weui-label">ERP编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_erpid}}" />
     </view>
   </view>
   <view class="weui-cell ">
@@ -61,7 +67,13 @@
       <view class="weui-label">EPR入库日期</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_indate}}" /> -->
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">当前选择:{{date}}</view>
+      </picker>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view class="picker">当前选择:{{time}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -69,7 +81,7 @@
       <view class="weui-label">EPR入库编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_storeid}}" />
     </view>
   </view>
   <view class="weui-cell ">
@@ -77,7 +89,7 @@
       <view class="weui-label">领料人</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.material_operaterid}}" />
     </view>
   </view>
   <view class="weui-cell ">
@@ -85,7 +97,12 @@
       <view class="weui-label">领料时间</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_operaterdate}}" /> -->
+      <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+        <view class="tui-picker-detail">
+          {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+        </view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -93,7 +110,7 @@
       <view class="weui-label">父级编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.parent_id}}" />
     </view>
   </view>
   <view class="weui-cell ">
@@ -101,29 +118,13 @@
       <view class="weui-label">产品编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" />
-    </view>
-  </view>
-  </view>
-
-  <!-- <view class="weui-cell ">
-    <view class="weui-cell__hd">
-      <view class="weui-label">日期</view>
-    </view>
-    <view class="weui-cell__bd">
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-        <view class="weui-input">{{date}}</view>
+      <picker bindchange="bindProductIdChange" value="{{productIdIndex}}" range="{{add_product_id}}">
+        <view class="picker">请选择:{{add_product_id[productIdIndex]}}</view>
       </picker>
     </view>
   </view>
-  <view class="weui-cell ">
-    <view class="weui-cell__hd">
-      <view class="weui-label">时间</view>
-    </view>
-    <view class="weui-cell__bd">
-      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
-        <view class="weui-input">{{time}}</view>
-      </picker>
-    </view>
-  </view>
-</view> -->
+</view>
+<view class="button-sp-area">
+  <button class="weui-btn mini-btn" type="primary" size="mini">确定</button>
+  <button class="weui-btn mini-btn" type="default" size="mini">取消</button>
+</view>

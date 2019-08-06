@@ -1,2 +1,23 @@
-<!--pages/materials/format.wxml-->
-<text>pages/materials/format.wxml</text>
+<view class="weui-cells__title">新增</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">规格编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" value="{{formData.format_id}}" />
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">规格名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入" value="{{formData.format_name}}" />
+    </view>
+  </view>
+</view>
+<view class="button-sp-area">
+  <button class="weui-btn mini-btn" type="primary" size="mini">确定</button>
+  <button class="weui-btn mini-btn" type="default" size="mini">取消</button>
+</view>
