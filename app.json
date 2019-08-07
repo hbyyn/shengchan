@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/materials/materials",
     "pages/index/index",
+    "pages/materials/materials",
     "pages/logs/logs",
     "pages/materials/supplier",
     "pages/materials/format",

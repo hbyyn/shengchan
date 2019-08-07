@@ -13,7 +13,10 @@
       <view class="weui-label">客户编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.customers_id}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.customers_id}}" /> -->
+      <picker bindchange="bindCustomersIdChange" value="{{customersIdIndex}}" range="{{add_customers_id}}">
+        <view class="weui-select weui-select_in-select-after">{{add_customers_id[customersIdIndex]}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -21,7 +24,12 @@
       <view class="weui-label">订购时间</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.order_date}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.order_date}}" /> -->
+      <picker mode="multiSelector" value="{{orderDate}}" bindchange="changeOrderDate" bindcolumnchange="changeOrderDateColumn" range="{{orderDateArray}}">
+        <view class="tui-picker-detail">
+          {{orderDateArray[0][orderDate[0]]}}-{{orderDateArray[1][orderDate[1]]}}-{{orderDateArray[2][orderDate[2]]}} {{orderDateArray[3][orderDate[3]]}}:{{orderDateArray[4][orderDate[4]]}}:{{orderDateArray[5][orderDate[5]]}}
+        </view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -29,9 +37,17 @@
       <view class="weui-label">订单过时</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.order_outdate}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.order_outdate}}" /> -->
+      <picker mode="multiSelector" value="{{orderOutdate}}" bindchange="changeOrderOutdate" bindcolumnchange="changeOrderOutdate" range="{{orderOutdateArray}}">
+        <view class="tui-picker-detail">
+          {{orderOutdateArray[0][orderOutdate[0]]}}-{{orderOutdateArray[1][orderOutdate[1]]}}-{{orderOutdateArray[2][orderOutdate[2]]}} {{orderOutdateArray[3][orderOutdate[3]]}}:{{orderOutdateArray[4][orderOutdate[4]]}}:{{orderOutdateArray[5][orderOutdate[5]]}}
+        </view>
+      </picker>
     </view>
   </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitFrom">确定</button>
 </view>
 
 

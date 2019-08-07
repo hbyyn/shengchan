@@ -17,7 +17,6 @@
     </view>
   </view>
 </view>
-<view class="button-sp-area">
-  <button class="weui-btn mini-btn" type="primary" size="mini">确定</button>
-  <button class="weui-btn mini-btn" type="default" size="mini">取消</button>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitFrom">确定</button>
 </view>

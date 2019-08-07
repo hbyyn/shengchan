@@ -1,4 +1,6 @@
 // pages/repair/mrepair.js
+var dateTimePicker = require('../../utils/dateTimePicker.js');
+
 Page({
 
   /**
@@ -15,15 +17,72 @@ Page({
       client_createtime: '',
       client_updator: '',
       client_updatetime: ''
-    }
-
+    },
+    materialIdIndex: 0 ,
+    add_material_id: ["dd11", "dd22", "dd33", "dd44", "dd55", "dd66"],
+    repairIdIndex: 0 ,
+    add_repair_id: ["dd11", "dd22", "dd33", "dd44", "dd55", "dd66"],
+    materialRepairBegindateArray: null,
+    materialRepairBegindate: null,
+    materialRepairEnddateArray: null,
+    materialRepairEnddate: null,
+    startYear: 2000,
+    endYear: 2100
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad() {
+    // 获取完整的年月日 时分秒，以及默认显示的数组
+    var obj = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
+    var obj1 = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
 
+
+    this.setData({
+      materialRepairBegindate: obj.dateTime,
+      materialRepairBegindateArray: obj.dateTimeArray,
+      materialRepairEnddate: obj1.dateTime,
+      materialRepairEnddateArray: obj1.dateTimeArray
+    });
+  },
+  changeMaterialRepairBegindate(e) {
+    this.setData({ materialRepairBegindate: e.detail.value });
+  },
+  changeMaterialRepairBegindateColumn(e) {
+    var arr = this.data.materialRepairBegindate, dateArr = this.data.materialRepairBegindateArray;
+
+    arr[e.detail.column] = e.detail.value;
+    dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+
+    this.setData({
+      materialRepairBegindateArray: dateArr,
+      materialRepairBegindate: arr
+    });
+  },
+  changeDateTime(e) {
+    this.setData({ materialRepairEnddate: e.detail.value });
+  },
+  changeDateTimeColumn(e) {
+    var arr = this.data.materialRepairEnddate, dateArr = this.data.materialRepairEnddateArray;
+
+    arr[e.detail.column] = e.detail.value;
+    dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+
+    this.setData({
+      materialRepairEnddateArray: dateArr,
+      materialRepairEnddate: arr
+    });
+  },
+  bindMaterialIdChange(e) {
+    this.setData({
+      materialIdIndex: e.detail.value
+    });
+  },
+  bindRepairIdChange(e) {
+    this.setData({
+      repairIdIndex: e.detail.value
+    });
   },
 
   /**

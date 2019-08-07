@@ -7,12 +7,12 @@ Page({
   data: {
     formData: {
       client_id: "",
-      supplier_id:"333+",
+      supplier_id:"",
       //供应商
-      supplier_name: "DDD+",
-      supplier_tel: "333+",
-      supplier_address: "333+",
-      supplier_fax: "333+",
+      supplier_name: "",
+      supplier_tel: "",
+      supplier_address: "",
+      supplier_fax: "",
       client_creator: "",
       client_createtime: "",
       client_updator: "",

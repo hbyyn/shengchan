@@ -5,7 +5,10 @@
       <view class="weui-label">物料编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.material_id}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_id}}" /> -->
+      <picker bindchange="bindMaterialIdChange" value="{{materialIdIndex}}" range="{{add_material_id}}">
+        <view class="weui-select weui-select_in-select-after">{{add_material_id[materialIdIndex]}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -13,7 +16,10 @@
       <view class="weui-label">返修编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.repair_id}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.repair_id}}" /> -->
+      <picker bindchange="bindRepairIdChange" value="{{repairIdIndex}}" range="{{add_repair_id}}">
+        <view class="weui-select weui-select_in-select-after">{{add_repair_id[repairIdIndex]}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -21,7 +27,12 @@
       <view class="weui-label">维修启动日期</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.material_repair_begindate}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_repair_begindate}}" /> -->
+      <picker mode="multiSelector" value="{{materialRepairBegindate}}" bindchange="changeMaterialRepairBegindate" bindcolumnchange="changeMaterialRepairBegindateColumn" range="{{materialRepairBegindateArray}}">
+        <view class="tui-picker-detail">
+          {{materialRepairBegindateArray[0][materialRepairBegindate[0]]}}-{{materialRepairBegindateArray[1][materialRepairBegindate[1]]}}-{{materialRepairBegindateArray[2][materialRepairBegindate[2]]}} {{materialRepairBegindateArray[3][materialRepairBegindate[3]]}}:{{materialRepairBegindateArray[4][materialRepairBegindate[4]]}}:{{materialRepairBegindateArray[5][materialRepairBegindate[5]]}}
+        </view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -29,9 +40,17 @@
       <view class="weui-label">维修结束日期</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.material_repair_enddate}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_repair_enddate}}" /> -->
+      <picker mode="multiSelector" value="{{materialRepairEnddate}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{materialRepairEnddateArray}}">
+        <view class="tui-picker-detail">
+          {{materialRepairEnddateArray[0][materialRepairEnddate[0]]}}-{{materialRepairEnddateArray[1][materialRepairEnddate[1]]}}-{{materialRepairEnddateArray[2][materialRepairEnddate[2]]}} {{materialRepairEnddateArray[3][materialRepairEnddate[3]]}}:{{materialRepairEnddateArray[4][materialRepairEnddate[4]]}}:{{materialRepairEnddateArray[5][materialRepairEnddate[5]]}}
+        </view>
+      </picker>
     </view>
   </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitFrom">确定</button>
 </view>
 
 

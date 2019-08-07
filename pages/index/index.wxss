@@ -37,7 +37,8 @@
   bottom: 40px;
   left: 6px;
   font-size: 11px;
-  box-shadow: 0 0 4px #1183fb;
+  border-radius: 2px 2px 0 0 ;
+  box-shadow: 0 0 4px #020a38;
 }
 .tab_footer .footer_item .footer_ul .footer_li {
   position: relative;

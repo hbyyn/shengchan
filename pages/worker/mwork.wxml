@@ -5,7 +5,21 @@
       <view class="weui-label">物料编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.material_id}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_id}}" /> -->
+       <picker bindchange="bindMaterialIdChange" value="{{materialIdIndex}}" range="{{add_material_id}}">
+        <view class="weui-select weui-select_in-select-after">{{add_material_id[materialIdIndex]}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="weui-cell ">
+    <view class="weui-cell__hd">
+      <view class="weui-label">工序编号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.work_id}}" /> -->
+      <picker bindchange="bindWorkIdChange" value="{{workIdIndex}}" range="{{add_work_id}}">
+        <view class="weui-select weui-select_in-select-after">{{add_work_id[workIdIndex]}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -13,7 +27,12 @@
       <view class="weui-label">开始日期</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.material_work_begindate}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_work_begindate}}" /> -->
+      <picker mode="multiSelector" value="{{materialWorkBegindate}}" bindchange="changeMaterialWorkBegindate" bindcolumnchange="changeMaterialWorkBegindateColumn" range="{{materialWorkBegindateArray}}">
+        <view class="tui-picker-detail">
+          {{materialWorkBegindateArray[0][materialWorkBegindate[0]]}}-{{materialWorkBegindateArray[1][materialWorkBegindate[1]]}}-{{materialWorkBegindateArray[2][materialWorkBegindate[2]]}} {{materialWorkBegindateArray[3][materialWorkBegindate[3]]}}:{{materialWorkBegindateArray[4][materialWorkBegindate[4]]}}:{{materialWorkBegindateArray[5][materialWorkBegindate[5]]}}
+        </view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell ">
@@ -21,9 +40,17 @@
       <view class="weui-label">结束日期</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.material_work_enddate}}" />
+      <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_work_enddate}}" /> -->
+      <picker mode="multiSelector" value="{{materialWorkEnddate}}" bindchange="changeMaterialWorkEnddate" bindcolumnchange="changeMaterialWorkEnddateColumn" range="{{materialWorkEnddateArray}}">
+        <view class="tui-picker-detail">
+          {{materialWorkEnddateArray[0][materialWorkEnddate[0]]}}-{{materialWorkEnddateArray[1][materialWorkEnddate[1]]}}-{{materialWorkEnddateArray[2][materialWorkEnddate[2]]}} {{materialWorkEnddateArray[3][materialWorkEnddate[3]]}}:{{materialWorkEnddateArray[4][materialWorkEnddate[4]]}}:{{materialWorkEnddateArray[5][materialWorkEnddate[5]]}}
+        </view>
+      </picker>
     </view>
   </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitFrom">确定</button>
 </view>
 
 

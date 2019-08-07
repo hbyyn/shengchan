@@ -41,4 +41,7 @@
     </view>
   </view>
 </view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitFrom">确定</button>
+</view>
 

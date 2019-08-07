@@ -1,1 +1,8 @@
-/* pages/materials/productcharts.wxss */
+.container{
+  padding: 0;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 200px;
+}

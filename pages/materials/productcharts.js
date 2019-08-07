@@ -1,79 +1,94 @@
-// pages/materials/productcharts.js
+import * as echarts from '../../ec-canvas/echarts';
+
+function initChart(canvas, width, height) {
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height
+  });
+  canvas.setChart(chart);
+  var data1 = {
+    "name": "root",
+    "children": [{
+      "name": "a",
+      "children": [{
+        "name": "a1"
+      }, {
+        "name": "a2"
+      }, {
+        "name": "a3"
+      }, {
+        "name": "a4"
+      }]
+    }, {
+      "name": "b",
+      "children": [{
+        "name": "b1",
+        "children": [{
+          "name": "b1"
+        }]
+      }, {
+        "name": "b2"
+      }, {
+        "name": "b3"
+      }, {
+        "name": "b4"
+      }]
+    }, {
+      "name": "c",
+      "children": [{
+        "name": "c1"
+      }]
+    }, {
+      "name": "d",
+      "children": [{
+        "name": "d1"
+      }]
+    }]
+  };
+
+  var option = {
+    series: [{
+      type: 'tree',
+      initialTreeDepth: -1,
+      name: 'tree1',
+      data: [data1],
+      top: '5%',
+      left: '20%',
+      bottom: '2%',
+      right: '15%',
+      symbolSize: 10,
+      symbol: 'circle',
+      label: {
+        normal: {
+          position: 'left',
+          verticalAlign: 'middle',
+          align: 'right',
+          color: 'black'
+        }
+      }
+
+    }]
+  };
+
+  chart.setOption(option);
+  return chart;
+}
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    formData: {
-      client_id: "",
-      //产品表
-      product_id: "",
-      product_name: "",
-      product_color:"",
-      product_desc: "",
-
-      client_creator: "",
-      client_createtime: "",
-      client_updator: "",
-      client_updatetime: ""
+  onShareAppMessage: function (res) {
+    return {
+      title: 'ECharts 可以在微信小程序中使用啦！',
+      path: '/pages/index/index',
+      success: function () { },
+      fail: function () { }
     }
-
+  },
+  data: {
+    ec: {
+      onInit: initChart
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onReady() {
   }
-})
+});

@@ -28,10 +28,10 @@ Page({
     add_supplier_id: ["dd11", "dd22", "dd33", "dd44", "dd55", "dd66"],
     productIdIndex:0,
     add_product_id:["dd11", "dd22", "dd33", "dd44", "dd55", "dd66"],
-    date: '2016-09-01',
-    time: '12:01',
-    dateTimeArray: null,
-    dateTime: null,
+    materialIndateArray: null,
+    materialIndate: null,
+    materialOperaterdateArray: null,
+    materialOperaterdate: null,
     startYear: 2000,
     endYear: 2100
 
@@ -64,22 +64,38 @@ Page({
 
 
     this.setData({
-      dateTime: obj.dateTime,
-      dateTimeArray: obj.dateTimeArray
+      materialIndate: obj.dateTime,
+      materialIndateArray: obj.dateTimeArray,
+      materialOperaterdate: obj1.dateTime,
+      materialOperaterdateArray: obj1.dateTimeArray
     });
   },
-  changeDateTime(e) {
-    this.setData({ dateTime: e.detail.value });
+  changeMaterialIndate(e) {
+    this.setData({ materialIndate: e.detail.value });
   },
-  changeDateTimeColumn(e) {
-    var arr = this.data.dateTime, dateArr = this.data.dateTimeArray;
+  changeMaterialIndateColumn(e) {
+    var arr = this.data.materialIndate, dateArr = this.data.materialIndateArray;
 
     arr[e.detail.column] = e.detail.value;
     dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
 
     this.setData({
-      dateTimeArray: dateArr,
-      dateTime: arr
+      materialIndateArray: dateArr,
+      materialIndate: arr
+    });
+  },
+  changeDateTime(e) {
+    this.setData({ materialOperaterdate: e.detail.value });
+  },
+  changeDateTimeColumn(e) {
+    var arr = this.data.materialOperaterdate, dateArr = this.data.materialOperaterdateArray;
+
+    arr[e.detail.column] = e.detail.value;
+    dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+
+    this.setData({
+      materialOperaterdateArray: dateArr,
+      materialOperaterdate: arr
     });
   },
   bindFormatIdChange(e) {

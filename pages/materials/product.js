@@ -5,6 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    formData: {
+      client_id: "",
+      //产品表
+      product_id: "",
+      product_name: "",
+      product_color:"",
+      product_desc: "",
+
+      client_creator: "",
+      client_createtime: "",
+      client_updator: "",
+      client_updatetime: ""
+    }
 
   },
 

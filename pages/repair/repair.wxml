@@ -13,7 +13,7 @@
       <view class="weui-label">返修名称</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.repair_name}}" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.repair_name}}"/>
     </view>
   </view>
   <view class="weui-cell ">
@@ -21,7 +21,7 @@
       <view class="weui-label">父级编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.parent_id}}" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.parent_id}}"/>
     </view>
   </view>
   <view class="weui-cell ">
@@ -29,9 +29,12 @@
       <view class="weui-label">修理说明标题</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.repair_desc}}" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.repair_desc}}"/>
     </view>
   </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitFrom">确定</button>
 </view>
 
 

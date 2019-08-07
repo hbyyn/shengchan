@@ -1,2 +1,5 @@
 <!--pages/materials/productcharts.wxml-->
-<text>pages/materials/productcharts.wxml</text>
+<!-- <text>pages/materials/productcharts.wxml</text> -->
+<view class="container">
+  <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+</view>

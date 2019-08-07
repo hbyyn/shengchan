@@ -1,4 +1,6 @@
 // pages/worker/mwork.js
+var dateTimePicker = require('../../utils/dateTimePicker.js');
+
 Page({
 
   /**
@@ -7,23 +9,80 @@ Page({
   data: {
     formData: {
       client_id: '',
-      material_id: 'b546+',
-      work_id: 'c222+',
+      material_id: '',
+      work_id: '',
       material_work_begindate: '',
       material_work_enddate: '',
       client_creator: '',
       client_createtime: '',
       client_updator: '',
       client_updatetime: ''
-    }
-
+    },
+    materialIdIndex: 0 ,
+    add_material_id: ["dd11", "dd22", "dd33", "dd44", "dd55", "dd66"],
+    workIdIndex: 0 ,
+    add_work_id: ["dd11", "dd22", "dd33", "dd44", "dd55", "dd66"],
+    materialWorkBegindateArray: null,
+    materialWorkBegindate: null,
+    materialWorkEnddateArray: null,
+    materialWorkEnddate: null,
+    startYear: 2000,
+    endYear: 2100
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad() {
+    // 获取完整的年月日 时分秒，以及默认显示的数组
+    var obj = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
+    var obj1 = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
 
+
+    this.setData({
+      materialWorkBegindate: obj.dateTime,
+      materialWorkBegindateArray: obj.dateTimeArray,
+      materialWorkEnddate: obj1.dateTime,
+      materialWorkEnddateArray: obj1.dateTimeArray
+    });
+  },
+  changeMaterialWorkBegindate(e) {
+    this.setData({ materialWorkBegindate: e.detail.value });
+  },
+  changeMaterialWorkBegindateColumn(e) {
+    var arr = this.data.materialWorkBegindate, dateArr = this.data.materialWorkBegindateArray;
+
+    arr[e.detail.column] = e.detail.value;
+    dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+
+    this.setData({
+      materialWorkBegindateArray: dateArr,
+      materialWorkBegindate: arr
+    });
+  },
+  changeMaterialWorkEnddate(e) {
+    this.setData({ materialWorkEnddate: e.detail.value });
+  },
+  changeMaterialWorkEnddateColumn(e) {
+    var arr = this.data.materialWorkEnddate, dateArr = this.data.materialWorkEnddateArray;
+
+    arr[e.detail.column] = e.detail.value;
+    dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+
+    this.setData({
+      materialWorkEnddateArray: dateArr,
+      materialWorkEnddate: arr
+    });
+  },
+  bindMaterialIdChange(e) {
+    this.setData({
+      materialIdIndex: e.detail.value
+    });
+  },
+  bindWorkIdChange(e) {
+    this.setData({
+      workIdIndex: e.detail.value
+    });
   },
 
   /**
