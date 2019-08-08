@@ -1,5 +1,8 @@
 <!--pages/materials/productcharts.wxml-->
 <!-- <text>pages/materials/productcharts.wxml</text> -->
-<view class="container">
-  <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+
+<view class='test' wx:for="{{chartList}}" wx:for-item="item" wx:key="index">
+  <view style='width:100%;height:600rpx'>
+  <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" tuData="{{item.data}}" ec="{{ ec }}"></ec-canvas>
+  </view>
 </view>

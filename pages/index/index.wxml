@@ -1,11 +1,6 @@
 <!-- index.wxml -->
 <view class="page">
 
-
-
-
-
-
   <view class="tab_footer">
     <view class="footer_item" wx:for="{{navList}}" wx:key="index" data-index="{{index}}" bindtap="tabClick">
       {{item.urlname}}

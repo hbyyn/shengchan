@@ -1,5 +1,6 @@
 {
+  "navigationBarTitleText": "规格表",
   "usingComponents": {
-    "timePicker": "../../components/timePicker/timePicker"
+
   }
 }

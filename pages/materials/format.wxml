@@ -5,7 +5,7 @@
       <view class="weui-label">规格编号</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.format_id}}" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.format_id}}" bindinput="formatIdInput"/>
     </view>
   </view>
   <view class="weui-cell ">
@@ -13,10 +13,16 @@
       <view class="weui-label">规格名称</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入" value="{{formData.format_name}}" />
+      <input class="weui-input" placeholder="请输入" value="{{formData.format_name}}"  bindinput="formatNameInput"/>
     </view>
   </view>
 </view>
 <view class="weui-btn-area">
   <button class="weui-btn" type="primary" bindtap="submitFrom">确定</button>
+</view>
+<view class="container">
+  <button bindtap='getScancode'>扫一扫输入</button>
+  <view>
+    <view>{{result}}</view>
+  </view>
 </view>

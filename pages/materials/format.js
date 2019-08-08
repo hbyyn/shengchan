@@ -4,25 +4,56 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+  data:{
     formData: {
       client_id: "",
-      format_id: "",
+      format_id: "44",
       format_name: "",
       client_creator: "",
       client_createtime: "",
       client_updator: "",
       client_updatetime: ""
-    }
+    },
+    result:''
+
+
+  },
+  getScancode() {
+    var _this = this;
+    // 允许从相机和相册扫码
+    wx.scanCode({
+      success: res => {
+        console.log(res)
+        var result = res.result;
+        _this.setData({
+          result: result,
+        })
+        this.onLoad()
+      },
+    });
+  },
+  formatIdInput(e){
+    this.setData({
+      ["formData.format_id"]:e.detail.value
+    })
+  },
+  formatNameInput(e){
+    this.setData({
+      ["formData.format_name"]:e.detail.value
+    })
+  },
+  submitFrom(){
+    console.log(this.data.formData)
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
