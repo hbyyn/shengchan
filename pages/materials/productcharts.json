@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "产品组成报表",
   "usingComponents": {
-    "ec-canvas": "../../ec-canvas/ec-canvas"
+    "ec-canvas": "../../components/ec-canvas/ec-canvas"
   }
 }

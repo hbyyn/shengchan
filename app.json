@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/materials/format",
     "pages/materials/materials",
     "pages/logs/logs",
     "pages/materials/supplier",
-    "pages/materials/format",
     "pages/materials/product",
     "pages/repair/mrepair",
     "pages/repair/repair",
@@ -15,7 +15,8 @@
     "pages/worker/work",
     "pages/repair/repaircharts",
     "pages/materials/productcharts",
-    "pages/worker/workcharts"
+    "pages/worker/workcharts",
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "light",

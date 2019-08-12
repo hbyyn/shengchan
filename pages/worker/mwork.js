@@ -46,6 +46,25 @@ Page({
       materialWorkEnddateArray: obj1.dateTimeArray
     });
   },
+    // 扫一扫
+  getScancode() {
+    var _this = this;
+    // 允许从相机和相册扫码
+    wx.scanCode({
+      success: res => {
+        console.log(res)
+        var result = res.result;
+        let dataObj=result.replace(/\s*/g,"")
+        dataObj=JSON.parse(dataObj)
+        _this.setData({
+          materialIdIndex:dataObj.materialIdIndex,
+          // formData:dataObj
+        })
+        console.log(dataObj.format_id)
+        // this.onLoad()
+      },
+    });
+  },
   changeMaterialWorkBegindate(e) {
     this.setData({ materialWorkBegindate: e.detail.value });
   },

@@ -1,1 +1,12 @@
 /* pages/worker/mwork.wxss */
+.weui-cell__sys{
+  display: flex;
+}
+.sRight{
+  flex: 1;
+}
+.scancode{
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+}

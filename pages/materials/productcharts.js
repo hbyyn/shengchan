@@ -1,4 +1,4 @@
-import * as echarts from '../../ec-canvas/echarts';
+import * as echarts from '../../components/ec-canvas/echarts';
 
 var data1 =[
   {data:{
@@ -132,11 +132,11 @@ function initChart(canvas, width, height,data) {
 
 
   var option = {
-    // tooltip: {
-    //   position: 'right',
-    //   trigger: 'item',
-    //   triggerOn: 'mousemove'
-    // },
+    tooltip: {
+      position: 'right',
+      trigger: 'item',
+      triggerOn: 'mousemove'
+    },
     series: [{
       type: 'tree',
       initialTreeDepth: -1,

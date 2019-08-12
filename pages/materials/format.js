@@ -15,8 +15,6 @@ Page({
       client_updatetime: ""
     },
     result:''
-
-
   },
   getScancode() {
     var _this = this;
@@ -25,10 +23,16 @@ Page({
       success: res => {
         console.log(res)
         var result = res.result;
+        let dataObj=result.replace(/\s*/g,"")
+        dataObj=JSON.parse(dataObj)
         _this.setData({
           result: result,
+          ["formData.format_id"]:dataObj.format_id,
+          ["formData.format_name"]:dataObj.format_name
+          // formData:dataObj
         })
-        this.onLoad()
+        console.log(dataObj.format_id)
+        // this.onLoad()
       },
     });
   },
@@ -43,8 +47,9 @@ Page({
     })
   },
   submitFrom(){
+    // let xxx=this.data.result.replace(/\s*/g,"")
+    // xxx=JSON.parse(xxx)
     console.log(this.data.formData)
-
   },
 
   /**

@@ -4,11 +4,12 @@
     <view class="weui-cell__hd">
       <view class="weui-label">物料编号</view>
     </view>
-    <view class="weui-cell__bd">
+    <view class="weui-cell__bd weui-cell__sys">
       <!-- <input class="weui-input" placeholder="请输入" value="{{formData.material_id}}" /> -->
-       <picker bindchange="bindMaterialIdChange" value="{{materialIdIndex}}" range="{{add_material_id}}">
+       <picker bindchange="bindMaterialIdChange" value="{{materialIdIndex}}" range="{{add_material_id}}" class="sRight">
         <view class="weui-select weui-select_in-select-after">{{add_material_id[materialIdIndex]}}</view>
       </picker>
+      <view class="iconsys iconfont scancode" bindtap='getScancode'></view>
     </view>
   </view>
   <view class="weui-cell ">

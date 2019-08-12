@@ -16,9 +16,6 @@ function getLoopArray(start, end, dtype) {
   return array;
 }
 function getMonthDay(year,month){
-
-  year = year.substr(0, year.length - 1);
-  month = month.substr(0, month.length - 1);
   console.log(year);
   console.log(month);
   var flag = year % 400 == 0 || (year % 4 == 0 && year % 100 != 0), array = null;
@@ -31,16 +28,16 @@ function getMonthDay(year,month){
     case '08':
     case '10':
     case '12':
-      array = getLoopArray(1, 31,'日')
+      array = getLoopArray(1, 31)
       break;
     case '04':
     case '06':
     case '09':
     case '11':
-      array = getLoopArray(1, 30, '日')
+      array = getLoopArray(1, 30)
       break;
     case '02':
-      array = flag ? getLoopArray(1, 29, '日') : getLoopArray(1, 28, '日')
+      array = flag ? getLoopArray(1, 29) : getLoopArray(1, 28)
       break;
     default:
       array = '月份格式不正确，请重新输入！'
@@ -50,12 +47,12 @@ function getMonthDay(year,month){
 function getNewDateArry(){
   // 当前时间的处理
   var newDate = new Date();
-  var year = withData(newDate.getFullYear()) + '年',
-      mont = withData(newDate.getMonth() + 1) + '月',
-      date = withData(newDate.getDate()) + '日',
+  var year = withData(newDate.getFullYear()),
+      mont = withData(newDate.getMonth() + 1),
+      date = withData(newDate.getDate()),
       hour = withData(newDate.getHours()),
       minu = withData(newDate.getMinutes()),
-      seco = withData(newDate.getSeconds()) + '秒';
+      seco = withData(newDate.getSeconds());
 
   return [year, mont, date, hour, minu, seco];
 }
@@ -72,8 +69,8 @@ function dateTimePicker(startYear,endYear,date) {
   // console.log(defaultDate[1])
   // 处理联动列表数据
   /*年月日 时分秒*/
-  dateTimeArray[0] = getLoopArray(start,end,'年');
-  dateTimeArray[1] = getLoopArray(1, 12,'月');
+  dateTimeArray[0] = getLoopArray(start,end);
+  dateTimeArray[1] = getLoopArray(1, 12);
   dateTimeArray[2] = getMonthDay(defaultDate[0], defaultDate[1]);
   dateTimeArray[3] = getLoopArray(0, 23);
   dateTimeArray[4] = getLoopArray(0, 59);

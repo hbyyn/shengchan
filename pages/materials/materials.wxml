@@ -30,7 +30,7 @@
       <view class="weui-label">规格编号</view>
     </view>
     <view class="weui-cell__bd">
-      <picker bindchange="bindFormatIdChange" value="{{formatIdIndex}}" range="{{add_format_id}}">
+      <picker bindchange="bindFormatIdChange" value="{{formatIdIndex}}"range="{{add_format_id}}">
         <view  class="weui-select weui-select_in-select-after">{{add_format_id[formatIdIndex]}}</view>
       </picker>
     </view>

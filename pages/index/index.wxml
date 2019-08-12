@@ -7,7 +7,7 @@
       <view class="footer_ul" wx:if="{{num === index && ishow}}">
         <view class="footer_li" wx:for="{{item.navChildList}}" wx:key="index">
           <block>
-            <navigator url="..{{item.url}}">
+            <navigator url="../{{item.url}}">
               <view>{{item.urlname}}</view>
             </navigator>
           </block>
